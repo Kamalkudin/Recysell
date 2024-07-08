@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Produk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Daftar Produk</h1>
+    </header>
+    <main>
+        <div class="controls">
+            <button id="add-product">+ Tambah Produk</button>
+        </div>
+        <table class="product-table">
+            <thead>
+                <tr>
+                    <th>Gambar</th>
+                    <th>Nama Produk</th>
+                    <th>Harga</th>
+                    <th>Kategori</th>
+                    <th>Jumlah Carbon</th>
+                    <th>Stok</th>
+                    <th>Edit</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <tr>
+                    <td><img src="path/to/image1.jpg" alt="Piring Kayu"></td>
+                    <td>Piring Bambu</td>
+                    <td>Rp250.000</td>
+                    <td>Alat Dapur</td>
+                    <td>1</td>
+                    <td><input type="number" value="10" min="0"></td>
+                    <td><a href="#" class="edit-link">Edit</a></td>
+                    <td>
+                        <button class="action-button">Hapus</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="path/to/image2.jpg" alt="Tas"></td>
+                    <td>Tas Bambu</td>
+                    <td>Rp200.000</td>
+                    <td>Fashion</td>
+                    <td>0</td>
+                    <td><input type="number" value="0" min="0"></td>
+                    <td><a href="#" class="edit-link">Edit</a></td>
+                    <td>
+                        <button class="action-button">Hapus</button>
+                    </td>
+                </tr>
+                <!-- Tambahkan produk lain sesuai kebutuhan -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Recysell. All rights reserved.</p>
+    </footer>
+</body>
+</html>

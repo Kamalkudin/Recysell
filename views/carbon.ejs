@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <link rel="stylesheet" href="./css/checkout.css" /> -->
+    <title>Carbon Emissions</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div class="navigation">
+      <div class="nav-center container d-flex">
+        <a href="index.html" class="logo"><h1>Recysell</h1></a>
+        <ul class="nav-list d-flex">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="product.html" class="nav-link">Shop</a></li>
+          <li class="nav-item"><a href="#terms" class="nav-link">Terms</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="carbon.html" class="nav-link">Carbon</a></li>
+          <li class="icons d-flex">
+            <a href="login.html" class="icon"><i class="bx bx-user"></i></a>
+            <div class="icon"><i class="bx bx-search"></i></div>
+            <div class="icon"><i class="bx bx-heart"></i><span class="d-flex">0</span></div>
+            <a href="cart.html" class="icon"><i class="bx bx-cart"></i><span class="d-flex">0</span></a>
+          </li>
+        </ul>
+        <div class="icons d-flex">
+          <a href="login.html" class="icon"><i class="bx bx-user"></i></a>
+          <div class="icon"><i class="bx bx-search"></i></div>
+          <div class="icon"><i class="bx bx-heart"></i><span class="d-flex">0</span></div>
+          <a href="cart.html" class="icon"><i class="bx bx-cart"></i><span class="d-flex">0</span></a>
+        </div>
+        <div class="hamburger"><i class="bx bx-menu-alt-left"></i></div>
+      </div>
+    </div>
+
+    <!-- Carbon -->
+    <div class="container">
+      <div class="checkout-wrapper">
+        <div class="left2-column">
+          <div class="checkout-form">
+            <h2>Carbon Emissions</h2>
+            <form id="checkoutForm">
+              <h3>NAMA PENGGUNA</h3>
+              <h5>Amount of Carbon Stored</h5>
+            </form>
+          </div>
+
+          <div class="checkout-products">
+            <h2>Visualisasi</h2>
+            <table>
+              <thead>
+                <tbody id="table-body"></tbody>
+              </thead>
+            </table>
+            <canvas id="bar-chart" style="width:100%"></canvas>
+            <br>
+            <p id="carbon-footprint"></p>
+            <p id="average-carbon-footprint"></p>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+        <footer class="footer">
+            <div class="row">
+            <div class="col d-flex">
+                <h4>INFORMATION</h4>
+                <a href="">About us</a>
+                <a href="">Contact Us</a>
+                <a href="">Term & Conditions</a>
+                <a href="">Shipping Guide</a>
+            </div>
+            <div class="col d-flex">
+                <h4>USEFUL LINK</h4>
+                <a href="">Online Store</a>
+                <a href="">Customer Services</a>
+                <a href="">Promotion</a>
+                <a href="">Top Brands</a>
+            </div>
+            <div class="col d-flex">
+                <span><i class="bx bxl-facebook-square"></i></span>
+                <span><i class="bx bxl-instagram-alt"></i></span>
+                <span><i class="bx bxl-github"></i></span>
+                <span><i class="bx bxl-twitter"></i></span>
+                <span><i class="bx bxl-pinterest"></i></span>
+            </div>
+            </div>
+        </footer>
+
+    <script src="./js/carbon.js"></script>
+    <script src="./js/cart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    
+  </body>
+</html>

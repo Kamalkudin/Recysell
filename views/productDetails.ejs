@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<title><%= product.name %></title>
+</head>
+<body>
+	<!-- Navigasi -->
+	<div class="top-nav">
+		<!-- Navigation content here -->
+	</div>
+	<div class="navigation">
+		<div class="nav-center container d-flex">
+			<a href="/" class="logo"><h1>Recysell</h1></a>
+			<ul class="nav-list d-flex">
+				<!-- Navigation items here -->
+			</ul>
+		</div>
+	</div>
+	<!-- Detail Produk -->
+<section class="section product-detail">
+  <div class="details container">
+	  <div class="left image-container">
+		  <div class="main">
+			  <img src="<%= product.image %>" id="zoom" alt="<%= product.name %>" />
+		  </div>
+	  </div>
+	  <div class="right">
+		  <span><%= product.category %></span>
+		  <h1><%= product.name %></h1>
+		  <div class="price">Rp<%= product.price %></div>
+		<form action="/buy" method="POST">
+			<div class="quantity-controls">
+				<input type="text" id="quantity" name="quantity" placeholder="1" value="1" readonly />
+			</div>
+			<input type="hidden" name="productId" value="<%= product._id %>">
+			<button type="submit" class="btn"><a href="/checkout">Beli</a></button>
+		</form>
+		  <h3>Detail Produk</h3>
+		  <p>Minimal Order: 1</p>
+				<p><%= product.desc %></p>
+                <p>Carbon footprint: <%= product.carbonFootprint %></p>
+			</div>
+		</div>
+	</section>
+	<!-- Footer --
+	<footer class="footer">
+	</footer>
+	<!-- Skrip Khusus -->
+	<script src="/js/index.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" crossorigin="anonymous"></script>
+	<script src="/js/zoomsl.min.js"></script>
+	<script>
+		$(function () {
+			console.log("halo");
+			$("#zoom").imagezoomsl({
+				zoomrange: [4, 4],
+			});
+		});
+	</script>
+  <footer class="footer">
+	<div class="row">
+	  <div class="col d-flex">
+		<h4>INFORMATION</h4>
+		<a href="">About us</a>
+		<a href="">Contact Us</a>
+		<a href="">Term & Conditions</a>
+		<a href="">Shipping Guide</a>
+	  </div>
+	  <div class="col d-flex">
+		<h4>USEFUL LINK</h4>
+		<a href="">Online Store</a>
+		<a href="">Customer Services</a>
+		<a href="">Promotion</a>
+		<a href="">Top Brands</a>
+	  </div>
+	  <div class="col d-flex">
+		<span><i class='bx bxl-facebook-square'></i></span>
+		<span><i class='bx bxl-instagram-alt' ></i></span>
+		<span><i class='bx bxl-github' ></i></span>
+		<span><i class='bx bxl-twitter' ></i></span>
+		<span><i class='bx bxl-pinterest' ></i></span>
+	  </div>
+	</div>
+  </footer>
+</body>
+</html>

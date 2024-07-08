@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Transaksi</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="transaction-list">
+      <h1>Daftar Transaksi</h1>
+      <div class="filter">
+        <input type="text" placeholder="Cari transaksimu di sini" />
+        <select>
+          <option>Semua Produk</option>
+          <option>Perawatan & Kecantikan</option>
+          <option>Perlengkapan Rumah</option>
+        </select>
+        <input type="date" />
+        <button>Reset Filter</button>
+      </div>
+
+      <!-- Transaksi Pertama -->
+      <div
+        class="transaction-item"
+        data-transaction='{"date":"15 Des 2023", "status":"Berhasil", "invoice":"INV/20240107/MPL/36653478002", "total":"Rp56.500", "details":[{"time":"14 Des 2023, 16:20 WIB", "status":"Pembayaran sudah Diverifikasi."}]}'
+      >
+        <div class="transaction-header">
+          <span class="category">Perawatan & Kecantikan</span>
+          <span class="date">15 Des 2023</span>
+          <span class="status success">Berhasil</span>
+        </div>
+        <div class="transaction-details">
+          <div class="product">
+            <img src="./images/image7.jpeg" alt="Product Image" />
+            <div class="product-info">
+              <span class="store">Perawatan & Kecantikan</span>
+              <span class="product-name">LULUR AMPAS HALUS ECO ENZYME 100% NATURAL</span>
+              <span class="price">1 barang x Rp20.000</span>
+            </div>
+          </div>
+          <div class="transaction-info">
+            <span class="invoice">INV/20240107/MPL/36653478002</span>
+            <span class="total">Total Belanja Rp56.500</span>
+          </div>
+        </div>
+        <div class="transaction-actions">
+          <button onclick="openModal(this)">Lihat Detail Transaksi</button>
+          <button>Ulas</button>
+          <button>Beli Lagi</button>
+        </div>
+      </div>
+
+      <!-- Transaksi Kedua -->
+      <div
+        class="transaction-item"
+        data-transaction='{"date":"24 Nov 2023", "status":"Selesai", "invoice":"IVR/20230624/XXIII/XI/18423547597", "total":"Rp25.000", "details":[{"time":"24 Nov 2023, 00:18 WIB", "status":"Transaksi selesai. Dana akan diteruskan ke penjual."}, {"time":"24 Nov 2023, 00:18 WIB", "status":"Transaksi dikonfirmasi."}, {"time":"22 Nov 2023, 18:58 WIB", "status":"Pesanan telah tiba di tujuan."}, {"time":"21 Nov 2023, 19:41 WIB", "status":"Pesanan telah dikirim."}, {"time":"21 Nov 2023, 08:25 WIB", "status":"Pesanan sedang diproses oleh penjual."}, {"time":"21 Nov 2023, 02:20 WIB", "status":"Pembayaran sudah Diverifikasi."}]}'
+      >
+        <div class="transaction-header">
+          <span class="category">Perawatan & Kecantikan</span>
+          <span class="date">24 Nov 2023</span>
+          <span class="status complete">Selesai</span>
+        </div>
+        <div class="transaction-details">
+          <div class="product">
+            <img src="./images/image6.jpeg" alt="Product Image" />
+            <div class="product-info">
+              <span class="store">Perawatan & Kecantikan</span>
+              <span class="product-name">HAIR OIL ECO ENZYME 100% ALAMI BAHAN ORGANIK</span>
+              <span class="price">1 barang x Rp25.000</span>
+            </div>
+          </div>
+          <div class="transaction-info">
+            <span class="invoice">IVR/20230624/XXIII/XI/18423547597</span>
+            <span class="total">Total Harga Rp25.000</span>
+          </div>
+        </div>
+        <div class="transaction-actions">
+          <button onclick="openModal(this)">Lihat Detail Transaksi</button>
+          <button>Ulas</button>
+          <button>Beli Lagi</button>
+        </div>
+      </div>
+
+      <!-- Transaksi Ketiga -->
+      <div
+        class="transaction-item"
+        data-transaction='{"date":"24 Nov 2023", "status":"Selesai", "invoice":"INV/20240107/ELE/1122334455", "total":"Rp9.999", "details":[{"time":"24 Nov 2023, 00:18 WIB", "status":"Transaksi selesai. Dana akan diteruskan ke penjual."}, {"time":"24 Nov 2023, 00:18 WIB", "status":"Transaksi dikonfirmasi."}, {"time":"22 Nov 2023, 18:58 WIB", "status":"Pesanan telah tiba di tujuan."}, {"time":"21 Nov 2023, 19:41 WIB", "status":"Pesanan telah dikirim."}, {"time":"21 Nov 2023, 08:25 WIB", "status":"Pesanan sedang diproses oleh penjual."}, {"time":"21 Nov 2023, 02:20 WIB", "status":"Pembayaran sudah Diverifikasi."}]}'
+      >
+        <div class="transaction-header">
+          <span class="category">Pembungkus Kado & Kemasan</span>
+          <span class="date">24 Nov 2023</span>
+          <span class="status complete">Selesai</span>
+        </div>
+        <div class="transaction-details">
+          <div class="product">
+            <img src="./images/image9.jpeg" alt="Product Image" />
+            <div class="product-info">
+              <span class="store">Pembungkus Kado & Kemasan</span>
+              <span class="product-name">PAPER BAG ECO FRIENDLY</span>
+              <span class="price">1 barang x Rp9.999</span>
+            </div>
+          </div>
+          <div class="transaction-info">
+            <span class="invoice">INV/20240107/ELE/1122334455</span>
+            <span class="total">Total Harga Rp9.999</span>
+          </div>
+        </div>
+        <div class="transaction-actions">
+          <button onclick="openModal(this)">Lihat Detail Transaksi</button>
+          <button>Ulas</button>
+          <button>Beli Lagi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Detail Transaksi -->
+    <div id="transactionModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Detail Transaksi</h2>
+        <div class="transaction-status">
+          <ul id="transactionDetailsList"></ul>
+        </div>
+        <div class="transaction-info">
+          <p><strong>No. Invoice:</strong> <span id="modalInvoice"></span></p>
+          <p><strong>Tanggal Pembelian:</strong> <span id="modalPurchaseDate"></span></p>
+        </div>
+        <div class="transaction-actions">
+          <button class="btn-review">Beri Ulasan</button>
+          <button class="btn-chat">Chat Penjual</button>
+          <button class="btn-help">Bantuan</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(button) {
+        const transactionItem = button.closest(".transaction-item");
+        const transactionData = JSON.parse(transactionItem.getAttribute("data-transaction"));
+
+        document.getElementById("modalInvoice").textContent = transactionData.invoice;
+        document.getElementById("modalPurchaseDate").textContent = transactionData.date;
+
+        const detailsList = document.getElementById("transactionDetailsList");
+        detailsList.innerHTML = "";
+
+        transactionData.details.forEach((detail) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>${detail.time}</strong><br>${detail.status}`;
+          detailsList.appendChild(li);
+        });
+
+        document.getElementById("transactionModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("transactionModal").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

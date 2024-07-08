@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="Ecommerce\Ecommerce\Product&ProductDetail\frontend\css\stail.css">
+</head>
+<body>
+    <header>
+        <h1>Menambahkan Barang</h1>
+    </header>
+    <main>
+        <form id="add-product-form">
+            <div class="form-container">
+                <div class="form-left">
+                    <div class="form-group">
+                        <label for="product-image">Tambah Gambar:</label>
+                        <input type="file" id="product-image" name="product-image" accept="image/*" required>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="form-group">
+                        <label for="seller-sku">Nama Barang:</label>
+                        <input type="text" id="seller-sku" name="seller-sku" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-price">Harga:</label>
+                        <input type="number" id="product-price" name="product-price" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-category">Kategori:</label>
+                        <select id="product-category" name="product-category" required>
+                            <option value="pecah">Pecah Belah</option>
+                            <option value="baju">Baju</option>
+                            <option value="rutang">Peralatan Rumah Tangga</option>
+                            <option value="dapur">Dapur</option>
+                            <!-- Add more categories as needed -->
+                        </select>
+                        <span class="info">Pilih kategori barang yang akan anda jual</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="carbon">Karbon:</label>
+                        <input type="number" id="carbon" name="carbon" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="product-description">Deskripsi:</label>
+                        <textarea id="product-description" name="product-description" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Tambah</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Recysell. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
