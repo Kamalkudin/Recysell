@@ -32,12 +32,9 @@
 		  <span><%= product.category %></span>
 		  <h1><%= product.name %></h1>
 		  <div class="price">Rp<%= product.price %></div>
-		<form action="/buy" method="POST">
-			<div class="quantity-controls">
-				<input type="text" id="quantity" name="quantity" placeholder="1" value="1" readonly />
-			</div>
+		  <form action="/checkout" method="GET">
 			<input type="hidden" name="productId" value="<%= product._id %>">
-			<button type="submit" class="btn"><a href="/checkout">Beli</a></button>
+			<button type="submit" class="btn">Beli</button>
 		</form>
 		  <h3>Detail Produk</h3>
 		  <p>Minimal Order: 1</p>

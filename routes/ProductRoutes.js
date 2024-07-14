@@ -105,23 +105,24 @@ router.get("/product-page", async (req, res) => {
     }
 });
 
+// In productRoutes.js
 router.post('/buy', async (req, res) => {
     try {
         const { productId } = req.body;
         const product = await Product.findById(productId);
         
         if (!product) {
-
             return res.redirect('/?error=Product not found');
         }
 
-        product.stock -= 1;
-        await product.save();
-
-
-        res.redirect('/?success=Purchase successful');
+        if (product.stock > 0) {
+            product.stock -= 1;
+            await product.save();
+            res.redirect('/?success=Purchase successful');
+        } else {
+            res.redirect('/?error=Out of stock');
+        }
     } catch (error) {
-
         res.redirect('/?error=' + encodeURIComponent(error.message));
     }
 });
@@ -170,6 +171,16 @@ router.get("/productdetails/:id", async (req, res) => {
         res.render("productDetails", { product });
     } catch (error) {
         return res.status(500).json({ error: error.message });
+    }
+});
+router.get("/product-counts", async (req, res) => {
+    try {
+        const productCounts = await Product.aggregate([
+            { $group: { _id: "$category", count: { $sum: 1 } } }
+        ]);
+        res.status(200).json(productCounts);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
     }
 });
 

@@ -12,25 +12,12 @@
     <!-- Navigation -->
     <div class="navigation">
         <div class="nav-center container d-flex">
-            <a href="index.html" class="logo"><h1>Recysell</h1></a>
+            <a href="/index" class="logo"><h1>Recysell</h1></a>
             <ul class="nav-list d-flex">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="product.html" class="nav-link">Shop</a></li>
-                <li class="nav-item"><a href="#terms" class="nav-link">Terms</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="carbon.html" class="nav-link">Carbon</a></li>
-                <li class="icons d-flex">
-                    <a href="login.html" class="icon"><i class="bx bx-user"></i></a>
-                    <div class="icon"><i class="bx bx-search"></i></div>
-                    <div class="icon"><i class="bx bx-heart"></i><span class="d-flex">0</span></div>
-                    <a href="cart.html" class="icon"><i class="bx bx-cart"></i><span class="d-flex">0</span></a>
-                </li>
+
             </ul>
             <div class="icons d-flex">
-                <a href="login.html" class="icon"><i class="bx bx-user"></i></a>
-                <div class="icon"><i class="bx bx-search"></i></div>
-                <div class="icon"><i class="bx bx-heart"></i><span class="d-flex">0</span></div>
-                <a href="cart.html" class="icon"><i class="bx bx-cart"></i><span class="d-flex">0</span></a>
+
             </div>
             <div class="hamburger"><i class="bx bx-menu-alt-left"></i></div>
         </div>
@@ -43,8 +30,8 @@
                 <div class="checkout-form">
                     <h2>Shipping Address</h2>
                     <form id="checkoutForm">
-                        <h3>NAMA PENGGUNA</h3>
-                        <h5>Jl. Wonosari</h5>
+                        <h3>Rama</h3>
+                        <h5>Jalan Wonosari, Sadeyan,Srimulyo, Piyungan, Bantul,DIY</h5>
                     </form>
                 </div>
 
@@ -54,9 +41,6 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Subtotal</th>
-                                <th>Carbon</th>
                             </tr>
                         </thead>
                         <tbody id="cartItems">
@@ -69,36 +53,18 @@
                                                 <p><%= product.name %></p>
                                                 <span class="price">Price: Rp<%= product.price %></span> <br />
                                                 <a href="#remove">remove</a>
+                                                <form action="/products/buy" method="POST">
+                                                    <input type="hidden" name="productId" value="<%= product._id %>" />
+                                                    <button type="submit" class="btn checkout-btn">Bayar</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </td>
-                                    <td><%= product.quantity %></td>
-                                    <td class="subtotal">Rp<%= product.price * product.quantity %></td>
-                                    <td></td>
                                 </tr>
                             <% }); %>
                         </tbody>
                     </table>
                 </div>
-            </div>
-
-            <div class="checkout-summary">
-                <h2>Payment Summary</h2>
-                <table>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td class="cart-subtotal"><h4>Rp<%= product.price * quantity %></h4></td>
-                    </tr>
-                    <tr>
-                        <td>Tax</td>
-                        <td class="cart-tax"><h4></h4></td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td class="cart-total"><h4>Rp<%= product.price * quantity %></h4></td>
-                    </tr>
-                </table>
-                <button type="submit" class="btn checkout-btn">Pilih Pembayaran</button>
             </div>
         </div>
     </div>
